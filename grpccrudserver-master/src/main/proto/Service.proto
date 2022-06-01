@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.grpccrudserver.proto";
+
+message UserDetailsRequestProto{
+    string firstName = 1;
+    string lastName = 2;
+    string email= 3;
+    string password = 4;
+}
+
+message UserRestProto{
+    string userId = 1;
+    string firstName = 2;
+    string lastName = 3;
+    string email = 4;
+}
+
+message OperationalStatusProto{
+    string operationResult = 1;
+    string operationName = 2;
+}
+
+message UserRestProtoColl{
+    repeated UserRestProto user_rest_protos = 1;
+}
+
+message UserIdProto{
+    string userId = 1;
+}
+
+message UserUpdateProto{
+    string userId = 1;
+    UserDetailsRequestProto user_details_request_proto = 2;
+}
+
+message UserListLimit{
+    int32 page = 1;
+    int32 limit = 2;
+}
+
+service grcpCrudService{
+    rpc readUser(UserIdProto) returns (UserRestProto);
+    rpc createUSer(UserDetailsRequestProto) returns (UserRestProto);
+    rpc updateUSer(UserUpdateProto) returns (UserRestProto);
+    rpc deleteUser(UserIdProto) returns (OperationalStatusProto);
+    rpc readListUser(UserListLimit) returns (UserRestProtoColl);
+}
