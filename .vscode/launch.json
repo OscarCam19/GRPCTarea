@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-GrpccrudclientApplication<grpccrudclient>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.grpccrudclient.GrpccrudclientApplication",
+            "projectName": "grpccrudclient",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-GrpccrudserverApplication<grpccrudserver>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.grpccrudserver.GrpccrudserverApplication",
+            "projectName": "grpccrudserver",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

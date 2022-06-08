@@ -10,7 +10,7 @@ public interface UserUpdateProtoOrBuilder extends
   /**
    * <code>string userId = 1;</code>
    */
-  String getUserId();
+  java.lang.String getUserId();
   /**
    * <code>string userId = 1;</code>
    */
@@ -24,9 +24,9 @@ public interface UserUpdateProtoOrBuilder extends
   /**
    * <code>.UserDetailsRequestProto user_details_request_proto = 2;</code>
    */
-  UserDetailsRequestProto getUserDetailsRequestProto();
+  com.grpccrudserver.proto.UserDetailsRequestProto getUserDetailsRequestProto();
   /**
    * <code>.UserDetailsRequestProto user_details_request_proto = 2;</code>
    */
-  UserDetailsRequestProtoOrBuilder getUserDetailsRequestProtoOrBuilder();
+  com.grpccrudserver.proto.UserDetailsRequestProtoOrBuilder getUserDetailsRequestProtoOrBuilder();
 }

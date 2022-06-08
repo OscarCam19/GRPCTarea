@@ -40,10 +40,21 @@ message UserListLimit{
     int32 limit = 2;
 }
 
+message Suma{
+    int32 A = 1;
+    int32 B = 2;
+}
+
+message Result_suma{
+    int32 res = 1;
+}
+
 service grcpCrudService{
     rpc readUser(UserIdProto) returns (UserRestProto);
     rpc createUSer(UserDetailsRequestProto) returns (UserRestProto);
     rpc updateUSer(UserUpdateProto) returns (UserRestProto);
     rpc deleteUser(UserIdProto) returns (OperationalStatusProto);
     rpc readListUser(UserListLimit) returns (UserRestProtoColl);
+    rpc sum(Suma) returns (Result_suma);
 }
+

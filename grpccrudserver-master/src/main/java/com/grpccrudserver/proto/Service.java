@@ -49,6 +49,16 @@ public final class Service {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_UserListLimit_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Suma_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Suma_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Result_suma_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Result_suma_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -57,7 +67,7 @@ public final class Service {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    String[] descriptorData = {
+    java.lang.String[] descriptorData = {
       "\n\rService.proto\"_\n\027UserDetailsRequestPro" +
       "to\022\021\n\tfirstName\030\001 \001(\t\022\020\n\010lastName\030\002 \001(\t\022" +
       "\r\n\005email\030\003 \001(\t\022\020\n\010password\030\004 \001(\t\"S\n\rUser" +
@@ -70,15 +80,17 @@ public final class Service {
       "\001 \001(\t\"_\n\017UserUpdateProto\022\016\n\006userId\030\001 \001(\t" +
       "\022<\n\032user_details_request_proto\030\002 \001(\0132\030.U" +
       "serDetailsRequestProto\",\n\rUserListLimit\022" +
-      "\014\n\004page\030\001 \001(\005\022\r\n\005limit\030\002 \001(\0052\214\002\n\017grcpCru" +
-      "dService\022(\n\010readUser\022\014.UserIdProto\032\016.Use" +
-      "rRestProto\0226\n\ncreateUSer\022\030.UserDetailsRe" +
-      "questProto\032\016.UserRestProto\022.\n\nupdateUSer" +
-      "\022\020.UserUpdateProto\032\016.UserRestProto\0223\n\nde" +
-      "leteUser\022\014.UserIdProto\032\027.OperationalStat" +
-      "usProto\0222\n\014readListUser\022\016.UserListLimit\032" +
-      "\022.UserRestProtoCollB\034\n\030com.grpccrudserve" +
-      "r.protoP\001b\006proto3"
+      "\014\n\004page\030\001 \001(\005\022\r\n\005limit\030\002 \001(\005\"\034\n\004Suma\022\t\n\001" +
+      "A\030\001 \001(\005\022\t\n\001B\030\002 \001(\005\"\032\n\013Result_suma\022\013\n\003res" +
+      "\030\001 \001(\0052\250\002\n\017grcpCrudService\022(\n\010readUser\022\014" +
+      ".UserIdProto\032\016.UserRestProto\0226\n\ncreateUS" +
+      "er\022\030.UserDetailsRequestProto\032\016.UserRestP" +
+      "roto\022.\n\nupdateUSer\022\020.UserUpdateProto\032\016.U" +
+      "serRestProto\0223\n\ndeleteUser\022\014.UserIdProto" +
+      "\032\027.OperationalStatusProto\0222\n\014readListUse" +
+      "r\022\016.UserListLimit\032\022.UserRestProtoColl\022\032\n" +
+      "\003sum\022\005.Suma\032\014.Result_sumaB\034\n\030com.grpccru" +
+      "dserver.protoP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -97,43 +109,55 @@ public final class Service {
     internal_static_UserDetailsRequestProto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_UserDetailsRequestProto_descriptor,
-        new String[] { "FirstName", "LastName", "Email", "Password", });
+        new java.lang.String[] { "FirstName", "LastName", "Email", "Password", });
     internal_static_UserRestProto_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_UserRestProto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_UserRestProto_descriptor,
-        new String[] { "UserId", "FirstName", "LastName", "Email", });
+        new java.lang.String[] { "UserId", "FirstName", "LastName", "Email", });
     internal_static_OperationalStatusProto_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_OperationalStatusProto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_OperationalStatusProto_descriptor,
-        new String[] { "OperationResult", "OperationName", });
+        new java.lang.String[] { "OperationResult", "OperationName", });
     internal_static_UserRestProtoColl_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_UserRestProtoColl_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_UserRestProtoColl_descriptor,
-        new String[] { "UserRestProtos", });
+        new java.lang.String[] { "UserRestProtos", });
     internal_static_UserIdProto_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_UserIdProto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_UserIdProto_descriptor,
-        new String[] { "UserId", });
+        new java.lang.String[] { "UserId", });
     internal_static_UserUpdateProto_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_UserUpdateProto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_UserUpdateProto_descriptor,
-        new String[] { "UserId", "UserDetailsRequestProto", });
+        new java.lang.String[] { "UserId", "UserDetailsRequestProto", });
     internal_static_UserListLimit_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_UserListLimit_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_UserListLimit_descriptor,
-        new String[] { "Page", "Limit", });
+        new java.lang.String[] { "Page", "Limit", });
+    internal_static_Suma_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_Suma_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Suma_descriptor,
+        new java.lang.String[] { "A", "B", });
+    internal_static_Result_suma_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_Result_suma_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Result_suma_descriptor,
+        new java.lang.String[] { "Res", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

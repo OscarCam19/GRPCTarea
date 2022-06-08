@@ -10,12 +10,12 @@ public interface UserRestProtoCollOrBuilder extends
   /**
    * <code>repeated .UserRestProto user_rest_protos = 1;</code>
    */
-  java.util.List<UserRestProto>
+  java.util.List<com.grpccrudserver.proto.UserRestProto> 
       getUserRestProtosList();
   /**
    * <code>repeated .UserRestProto user_rest_protos = 1;</code>
    */
-  UserRestProto getUserRestProtos(int index);
+  com.grpccrudserver.proto.UserRestProto getUserRestProtos(int index);
   /**
    * <code>repeated .UserRestProto user_rest_protos = 1;</code>
    */
@@ -23,11 +23,11 @@ public interface UserRestProtoCollOrBuilder extends
   /**
    * <code>repeated .UserRestProto user_rest_protos = 1;</code>
    */
-  java.util.List<? extends UserRestProtoOrBuilder>
+  java.util.List<? extends com.grpccrudserver.proto.UserRestProtoOrBuilder> 
       getUserRestProtosOrBuilderList();
   /**
    * <code>repeated .UserRestProto user_rest_protos = 1;</code>
    */
-  UserRestProtoOrBuilder getUserRestProtosOrBuilder(
+  com.grpccrudserver.proto.UserRestProtoOrBuilder getUserRestProtosOrBuilder(
       int index);
 }

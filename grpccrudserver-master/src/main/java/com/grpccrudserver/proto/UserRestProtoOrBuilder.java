@@ -10,7 +10,7 @@ public interface UserRestProtoOrBuilder extends
   /**
    * <code>string userId = 1;</code>
    */
-  String getUserId();
+  java.lang.String getUserId();
   /**
    * <code>string userId = 1;</code>
    */
@@ -20,7 +20,7 @@ public interface UserRestProtoOrBuilder extends
   /**
    * <code>string firstName = 2;</code>
    */
-  String getFirstName();
+  java.lang.String getFirstName();
   /**
    * <code>string firstName = 2;</code>
    */
@@ -30,7 +30,7 @@ public interface UserRestProtoOrBuilder extends
   /**
    * <code>string lastName = 3;</code>
    */
-  String getLastName();
+  java.lang.String getLastName();
   /**
    * <code>string lastName = 3;</code>
    */
@@ -40,7 +40,7 @@ public interface UserRestProtoOrBuilder extends
   /**
    * <code>string email = 4;</code>
    */
-  String getEmail();
+  java.lang.String getEmail();
   /**
    * <code>string email = 4;</code>
    */

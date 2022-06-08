@@ -10,7 +10,7 @@ public interface UserIdProtoOrBuilder extends
   /**
    * <code>string userId = 1;</code>
    */
-  String getUserId();
+  java.lang.String getUserId();
   /**
    * <code>string userId = 1;</code>
    */

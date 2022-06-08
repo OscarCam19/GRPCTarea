@@ -4,19 +4,20 @@
 package com.grpccrudserver.proto;
 
 /**
- * Protobuf type {@code UserIdProto}
+ * Protobuf type {@code Suma}
  */
-public  final class UserIdProto extends
+public  final class Suma extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:UserIdProto)
-    UserIdProtoOrBuilder {
+    // @@protoc_insertion_point(message_implements:Suma)
+    SumaOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use UserIdProto.newBuilder() to construct.
-  private UserIdProto(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use Suma.newBuilder() to construct.
+  private Suma(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private UserIdProto() {
-    userId_ = "";
+  private Suma() {
+    a_ = 0;
+    b_ = 0;
   }
 
   @java.lang.Override
@@ -24,7 +25,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private UserIdProto(
+  private Suma(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -43,10 +44,14 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 8: {
 
-            userId_ = s;
+            a_ = input.readInt32();
+            break;
+          }
+          case 16: {
+
+            b_ = input.readInt32();
             break;
           }
           default: {
@@ -70,49 +75,33 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.grpccrudserver.proto.Service.internal_static_UserIdProto_descriptor;
+    return com.grpccrudserver.proto.Service.internal_static_Suma_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.grpccrudserver.proto.Service.internal_static_UserIdProto_fieldAccessorTable
+    return com.grpccrudserver.proto.Service.internal_static_Suma_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.grpccrudserver.proto.UserIdProto.class, com.grpccrudserver.proto.UserIdProto.Builder.class);
+            com.grpccrudserver.proto.Suma.class, com.grpccrudserver.proto.Suma.Builder.class);
   }
 
-  public static final int USERID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object userId_;
+  public static final int A_FIELD_NUMBER = 1;
+  private int a_;
   /**
-   * <code>string userId = 1;</code>
+   * <code>int32 A = 1;</code>
    */
-  public java.lang.String getUserId() {
-    java.lang.Object ref = userId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      userId_ = s;
-      return s;
-    }
+  public int getA() {
+    return a_;
   }
+
+  public static final int B_FIELD_NUMBER = 2;
+  private int b_;
   /**
-   * <code>string userId = 1;</code>
+   * <code>int32 B = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getUserIdBytes() {
-    java.lang.Object ref = userId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      userId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public int getB() {
+    return b_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -129,8 +118,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getUserIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userId_);
+    if (a_ != 0) {
+      output.writeInt32(1, a_);
+    }
+    if (b_ != 0) {
+      output.writeInt32(2, b_);
     }
     unknownFields.writeTo(output);
   }
@@ -141,8 +133,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getUserIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userId_);
+    if (a_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(1, a_);
+    }
+    if (b_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(2, b_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -154,14 +151,16 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.grpccrudserver.proto.UserIdProto)) {
+    if (!(obj instanceof com.grpccrudserver.proto.Suma)) {
       return super.equals(obj);
     }
-    com.grpccrudserver.proto.UserIdProto other = (com.grpccrudserver.proto.UserIdProto) obj;
+    com.grpccrudserver.proto.Suma other = (com.grpccrudserver.proto.Suma) obj;
 
     boolean result = true;
-    result = result && getUserId()
-        .equals(other.getUserId());
+    result = result && (getA()
+        == other.getA());
+    result = result && (getB()
+        == other.getB());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -173,76 +172,78 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + USERID_FIELD_NUMBER;
-    hash = (53 * hash) + getUserId().hashCode();
+    hash = (37 * hash) + A_FIELD_NUMBER;
+    hash = (53 * hash) + getA();
+    hash = (37 * hash) + B_FIELD_NUMBER;
+    hash = (53 * hash) + getB();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.grpccrudserver.proto.UserIdProto parseFrom(
+  public static com.grpccrudserver.proto.Suma parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.grpccrudserver.proto.UserIdProto parseFrom(
+  public static com.grpccrudserver.proto.Suma parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.grpccrudserver.proto.UserIdProto parseFrom(
+  public static com.grpccrudserver.proto.Suma parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.grpccrudserver.proto.UserIdProto parseFrom(
+  public static com.grpccrudserver.proto.Suma parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.grpccrudserver.proto.UserIdProto parseFrom(byte[] data)
+  public static com.grpccrudserver.proto.Suma parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.grpccrudserver.proto.UserIdProto parseFrom(
+  public static com.grpccrudserver.proto.Suma parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.grpccrudserver.proto.UserIdProto parseFrom(java.io.InputStream input)
+  public static com.grpccrudserver.proto.Suma parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.grpccrudserver.proto.UserIdProto parseFrom(
+  public static com.grpccrudserver.proto.Suma parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.grpccrudserver.proto.UserIdProto parseDelimitedFrom(java.io.InputStream input)
+  public static com.grpccrudserver.proto.Suma parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.grpccrudserver.proto.UserIdProto parseDelimitedFrom(
+  public static com.grpccrudserver.proto.Suma parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.grpccrudserver.proto.UserIdProto parseFrom(
+  public static com.grpccrudserver.proto.Suma parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.grpccrudserver.proto.UserIdProto parseFrom(
+  public static com.grpccrudserver.proto.Suma parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -255,7 +256,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.grpccrudserver.proto.UserIdProto prototype) {
+  public static Builder newBuilder(com.grpccrudserver.proto.Suma prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -271,26 +272,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code UserIdProto}
+   * Protobuf type {@code Suma}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:UserIdProto)
-      com.grpccrudserver.proto.UserIdProtoOrBuilder {
+      // @@protoc_insertion_point(builder_implements:Suma)
+      com.grpccrudserver.proto.SumaOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.grpccrudserver.proto.Service.internal_static_UserIdProto_descriptor;
+      return com.grpccrudserver.proto.Service.internal_static_Suma_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.grpccrudserver.proto.Service.internal_static_UserIdProto_fieldAccessorTable
+      return com.grpccrudserver.proto.Service.internal_static_Suma_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.grpccrudserver.proto.UserIdProto.class, com.grpccrudserver.proto.UserIdProto.Builder.class);
+              com.grpccrudserver.proto.Suma.class, com.grpccrudserver.proto.Suma.Builder.class);
     }
 
-    // Construct using com.grpccrudserver.proto.UserIdProto.newBuilder()
+    // Construct using com.grpccrudserver.proto.Suma.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -308,7 +309,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      userId_ = "";
+      a_ = 0;
+
+      b_ = 0;
 
       return this;
     }
@@ -316,17 +319,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.grpccrudserver.proto.Service.internal_static_UserIdProto_descriptor;
+      return com.grpccrudserver.proto.Service.internal_static_Suma_descriptor;
     }
 
     @java.lang.Override
-    public com.grpccrudserver.proto.UserIdProto getDefaultInstanceForType() {
-      return com.grpccrudserver.proto.UserIdProto.getDefaultInstance();
+    public com.grpccrudserver.proto.Suma getDefaultInstanceForType() {
+      return com.grpccrudserver.proto.Suma.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.grpccrudserver.proto.UserIdProto build() {
-      com.grpccrudserver.proto.UserIdProto result = buildPartial();
+    public com.grpccrudserver.proto.Suma build() {
+      com.grpccrudserver.proto.Suma result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -334,9 +337,10 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.grpccrudserver.proto.UserIdProto buildPartial() {
-      com.grpccrudserver.proto.UserIdProto result = new com.grpccrudserver.proto.UserIdProto(this);
-      result.userId_ = userId_;
+    public com.grpccrudserver.proto.Suma buildPartial() {
+      com.grpccrudserver.proto.Suma result = new com.grpccrudserver.proto.Suma(this);
+      result.a_ = a_;
+      result.b_ = b_;
       onBuilt();
       return result;
     }
@@ -375,19 +379,21 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.grpccrudserver.proto.UserIdProto) {
-        return mergeFrom((com.grpccrudserver.proto.UserIdProto)other);
+      if (other instanceof com.grpccrudserver.proto.Suma) {
+        return mergeFrom((com.grpccrudserver.proto.Suma)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.grpccrudserver.proto.UserIdProto other) {
-      if (other == com.grpccrudserver.proto.UserIdProto.getDefaultInstance()) return this;
-      if (!other.getUserId().isEmpty()) {
-        userId_ = other.userId_;
-        onChanged();
+    public Builder mergeFrom(com.grpccrudserver.proto.Suma other) {
+      if (other == com.grpccrudserver.proto.Suma.getDefaultInstance()) return this;
+      if (other.getA() != 0) {
+        setA(other.getA());
+      }
+      if (other.getB() != 0) {
+        setB(other.getB());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -404,11 +410,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.grpccrudserver.proto.UserIdProto parsedMessage = null;
+      com.grpccrudserver.proto.Suma parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.grpccrudserver.proto.UserIdProto) e.getUnfinishedMessage();
+        parsedMessage = (com.grpccrudserver.proto.Suma) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -418,71 +424,54 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object userId_ = "";
+    private int a_ ;
     /**
-     * <code>string userId = 1;</code>
+     * <code>int32 A = 1;</code>
      */
-    public java.lang.String getUserId() {
-      java.lang.Object ref = userId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        userId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    public int getA() {
+      return a_;
     }
     /**
-     * <code>string userId = 1;</code>
+     * <code>int32 A = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getUserIdBytes() {
-      java.lang.Object ref = userId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        userId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string userId = 1;</code>
-     */
-    public Builder setUserId(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      userId_ = value;
+    public Builder setA(int value) {
+      
+      a_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string userId = 1;</code>
+     * <code>int32 A = 1;</code>
      */
-    public Builder clearUserId() {
+    public Builder clearA() {
       
-      userId_ = getDefaultInstance().getUserId();
+      a_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int b_ ;
+    /**
+     * <code>int32 B = 2;</code>
+     */
+    public int getB() {
+      return b_;
+    }
+    /**
+     * <code>int32 B = 2;</code>
+     */
+    public Builder setB(int value) {
+      
+      b_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string userId = 1;</code>
+     * <code>int32 B = 2;</code>
      */
-    public Builder setUserIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+    public Builder clearB() {
       
-      userId_ = value;
+      b_ = 0;
       onChanged();
       return this;
     }
@@ -499,41 +488,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:UserIdProto)
+    // @@protoc_insertion_point(builder_scope:Suma)
   }
 
-  // @@protoc_insertion_point(class_scope:UserIdProto)
-  private static final com.grpccrudserver.proto.UserIdProto DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:Suma)
+  private static final com.grpccrudserver.proto.Suma DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.grpccrudserver.proto.UserIdProto();
+    DEFAULT_INSTANCE = new com.grpccrudserver.proto.Suma();
   }
 
-  public static com.grpccrudserver.proto.UserIdProto getDefaultInstance() {
+  public static com.grpccrudserver.proto.Suma getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<UserIdProto>
-      PARSER = new com.google.protobuf.AbstractParser<UserIdProto>() {
+  private static final com.google.protobuf.Parser<Suma>
+      PARSER = new com.google.protobuf.AbstractParser<Suma>() {
     @java.lang.Override
-    public UserIdProto parsePartialFrom(
+    public Suma parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new UserIdProto(input, extensionRegistry);
+      return new Suma(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<UserIdProto> parser() {
+  public static com.google.protobuf.Parser<Suma> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<UserIdProto> getParserForType() {
+  public com.google.protobuf.Parser<Suma> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.grpccrudserver.proto.UserIdProto getDefaultInstanceForType() {
+  public com.grpccrudserver.proto.Suma getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

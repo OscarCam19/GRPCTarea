@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @GrpcService
-public class GrpcCrudService extends grcpCrudServiceGrpc.grcpCrudServiceImplBase{
+public class GrpcCrudService extends grcpCrudServiceGrpc.grcpCrudServiceImplBase {
 
     @Autowired
     UserRepository userRepository;
@@ -29,13 +29,14 @@ public class GrpcCrudService extends grcpCrudServiceGrpc.grcpCrudServiceImplBase
         page = request.getPage();
         limit = request.getLimit();
 
-        if(page>0) page = page-1;
+        if (page > 0)
+            page = page - 1;
 
         Pageable pageableRequest = PageRequest.of(page, limit);
         Page<UserEntity> usersPage = userRepository.findAll(pageableRequest);
         List<UserEntity> users = usersPage.getContent();
 
-        for (UserEntity userEntity : users){
+        for (UserEntity userEntity : users) {
             UserRestProto userRestProto = UserRestProto.newBuilder()
                     .setUserId(userEntity.getUserId())
                     .setFirstName(userEntity.getFirstName())
@@ -56,7 +57,7 @@ public class GrpcCrudService extends grcpCrudServiceGrpc.grcpCrudServiceImplBase
         UserEntity userEntity = new UserEntity();
         BeanUtils.copyProperties(request, userEntity);
 
-        //String publicUserId = utils.generateAddressId(5);
+        // String publicUserId = utils.generateAddressId(5);
         String publicUserId = request.getFirstName();
 
         userEntity.setEncryptedPassword(request.getPassword());
@@ -78,7 +79,7 @@ public class GrpcCrudService extends grcpCrudServiceGrpc.grcpCrudServiceImplBase
     @Override
     public void readUser(UserIdProto request, StreamObserver<UserRestProto> responseObserver) {
         UserEntity userEntity = userRepository.findByUserId(request.getUserId());
-        if(userEntity == null)
+        if (userEntity == null)
             throw new RuntimeException("User with ID: " + request.getUserId() + " Not Found");
         UserRestProto userRestProto = UserRestProto.newBuilder()
                 .setFirstName(userEntity.getFirstName())
@@ -95,7 +96,8 @@ public class GrpcCrudService extends grcpCrudServiceGrpc.grcpCrudServiceImplBase
     public void updateUSer(UserUpdateProto request, StreamObserver<UserRestProto> responseObserver) {
         UserDto returnValue = new UserDto();
         UserEntity userEntity = userRepository.findByUserId(request.getUserId());
-        if(userEntity == null) throw new RuntimeException("User with ID: " + request.getUserId() + " Not Found");
+        if (userEntity == null)
+            throw new RuntimeException("User with ID: " + request.getUserId() + " Not Found");
 
         userEntity.setFirstName(request.getUserDetailsRequestProto().getFirstName());
         userEntity.setLastName(request.getUserDetailsRequestProto().getLastName());
@@ -117,9 +119,9 @@ public class GrpcCrudService extends grcpCrudServiceGrpc.grcpCrudServiceImplBase
     public void deleteUser(UserIdProto request, StreamObserver<OperationalStatusProto> responseObserver) {
         UserEntity userEntity = userRepository.findByUserId(request.getUserId());
 
-        if(userEntity == null) {
+        if (userEntity == null) {
             responseObserver.onError(new RuntimeException("User with ID: " + request.getUserId() + " Not Found"));
-        }else{
+        } else {
             userRepository.delete(userEntity);
 
             OperationalStatusProto operationalStatusProto = OperationalStatusProto.newBuilder()
@@ -129,5 +131,22 @@ public class GrpcCrudService extends grcpCrudServiceGrpc.grcpCrudServiceImplBase
             responseObserver.onNext(operationalStatusProto);
             responseObserver.onCompleted();
         }
+    }
+
+    @Override
+    public void suma(Suma request, StreamObserver<Result_suma> responseObserver) {
+        int a;
+        int b;
+
+        a = request.getA();
+        b = request.getB();
+
+        int res = a + b;
+
+        Result_suma result = Result_suma.newBuilder()
+                .setRes(res)
+                .build();
+        responseObserver.onNext(result);
+        responseObserver.onCompleted();
     }
 }

@@ -10,7 +10,7 @@ public interface OperationalStatusProtoOrBuilder extends
   /**
    * <code>string operationResult = 1;</code>
    */
-  String getOperationResult();
+  java.lang.String getOperationResult();
   /**
    * <code>string operationResult = 1;</code>
    */
@@ -20,7 +20,7 @@ public interface OperationalStatusProtoOrBuilder extends
   /**
    * <code>string operationName = 2;</code>
    */
-  String getOperationName();
+  java.lang.String getOperationName();
   /**
    * <code>string operationName = 2;</code>
    */

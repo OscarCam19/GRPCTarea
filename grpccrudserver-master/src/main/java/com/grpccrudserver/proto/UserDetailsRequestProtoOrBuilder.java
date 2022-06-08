@@ -10,7 +10,7 @@ public interface UserDetailsRequestProtoOrBuilder extends
   /**
    * <code>string firstName = 1;</code>
    */
-  String getFirstName();
+  java.lang.String getFirstName();
   /**
    * <code>string firstName = 1;</code>
    */
@@ -20,7 +20,7 @@ public interface UserDetailsRequestProtoOrBuilder extends
   /**
    * <code>string lastName = 2;</code>
    */
-  String getLastName();
+  java.lang.String getLastName();
   /**
    * <code>string lastName = 2;</code>
    */
@@ -30,7 +30,7 @@ public interface UserDetailsRequestProtoOrBuilder extends
   /**
    * <code>string email = 3;</code>
    */
-  String getEmail();
+  java.lang.String getEmail();
   /**
    * <code>string email = 3;</code>
    */
@@ -40,7 +40,7 @@ public interface UserDetailsRequestProtoOrBuilder extends
   /**
    * <code>string password = 4;</code>
    */
-  String getPassword();
+  java.lang.String getPassword();
   /**
    * <code>string password = 4;</code>
    */
